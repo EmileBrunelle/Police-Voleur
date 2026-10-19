@@ -48,8 +48,8 @@ describe('sans rester sur place', () => {
   const s = solve(adjacency, false)
   it('policier F, voleur A, policier joue : le policier gagne', () => {
     const r = s.get('F', 'A', 'cop')
-    console.log('N (F, A, cop, sans rester) =', r.movesToCapture)
     expect(r.copWins).toBe(true)
+    expect(r.movesToCapture).toBe(15)
   })
   it('policier F, voleur A, voleur joue : capture forcée (2 demi-coups : le voleur bouge, le policier capture)', () => {
     expect(s.get('F', 'A', 'robber')).toEqual({ copWins: true, movesToCapture: 2 })
